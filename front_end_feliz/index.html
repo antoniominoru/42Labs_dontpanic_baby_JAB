@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="index.js"></script>
+	<script src="moveToNext.js"></script>
 	<title>teste_front_feliz</title>
 	<link rel="icon"
 		href="https://cdn.greatsoftwares.com.br/arquivos/paginas/7460-069a1f4f8b36e2f74a9525cd6e009e94.png">
@@ -18,14 +19,35 @@
 	<main>
 		<h2>LAST ATTEMPT</h2>
 		<div>
-			<input id="last_attempt" value="last_attempt" readonly>
-			<input id="last_attempt_crypt" value="last_attempt_crypt" readonly>
+			<input id="last_att1" value="last_attempt" readonly>
+			<input id="last_att2" value="last_attempt" readonly>
+			<input id="last_att3" value="last_attempt" readonly>
+			<input id="last_att4" value="last_attempt" readonly>
+			<input id="last_att5" value="last_attempt" readonly>
+			<input id="last_att6" value="last_attempt" readonly>
+		</div>
+		<div>
+			<input id="last_attempt_crypt1" value="last_attempt_crypt" readonly>
+			<input id="last_attempt_crypt2" value="last_attempt_crypt" readonly>
+			<input id="last_attempt_crypt3" value="last_attempt_crypt" readonly>
+			<input id="last_attempt_crypt4" value="last_attempt_crypt" readonly>
+			<input id="last_attempt_crypt5" value="last_attempt_crypt" readonly>
+			<input id="last_attempt_crypt6" value="last_attempt_crypt" readonly>
 		</div>
 
 		<h2>CURRENT ATTEMPT</h2>
 		<div>
-			<input id="current_attempt">
-			<button onclick="submitToBeEvaluated()">Submit</button>
+			<form>
+				<input type="text" id="current_att1" maxlength="1" onkeyup="moveToNext(this, 'current_att2')" />
+				<input type="text" id="current_att2" maxlength="1" onkeyup="moveToNext(this, 'current_att3')" />
+				<input type="text" id="current_att3" maxlength="1" onkeyup="moveToNext(this, 'current_att4')" />
+				<input type="text" id="current_att4" maxlength="1" onkeyup="moveToNext(this, 'current_att5')" />
+				<input type="text" id="current_att5" maxlength="1" onkeyup="moveToNext(this, 'current_att6')" />
+				<input type="text" id="current_att6" maxlength="1" onkeyup="moveToNext(this, 'button')" />
+			</form>
+		</div>
+		<div>
+			<button id="button" onclick="submitToBeEvaluated()">Submit</button>
 		</div>
 	</main>
 
