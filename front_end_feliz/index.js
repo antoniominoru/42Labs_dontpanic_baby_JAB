@@ -1,8 +1,3 @@
-/* Reload*/
-// setInterval(() => {
-// 	window.location.reload(true)
-// }, 10000);
-
 async function submitToBeEvaluated() {
 
 	let formInput = document.getElementById("current_attempt")
@@ -32,8 +27,7 @@ async function submitToBeEvaluated() {
 	formInput.value = ""
 }
 
-
-let formInput = document.getElementById(`last_attempt${i}`)
-formInput.value = resposta.string[i]
-let formInput = document.getElementById(`last_attempt_crypt${i}`)
-formInput.value = resposta.crypt[i]
+function moveToNext(current, next) {
+	if (current.value.length >= current.maxLength)
+		document.getElementById(next).focus();
+}
