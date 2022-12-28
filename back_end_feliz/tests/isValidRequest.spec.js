@@ -1,4 +1,9 @@
-const { isObject, isValidRequest } = require('../src/isValidRequest')
+const {
+	isObject,
+	isSameArray,
+	objectKeysMatchArray,
+	isValidRequest
+} = require('../src/isValidRequest')
 
 const mockFunction = jest.fn(() => true)
 
@@ -34,6 +39,52 @@ describe('function isObject', () => {
 	})
 })
 
+describe('function isSameArray', () => {
+	describe('returned false on receiving the different arrays', () => {
+		test.each([
+			{ array1: ['1'], array2: ['2'] },
+			{ array1: ['1', '2'], array2: ['1', '1'] },
+			{ array1: ['1', '2'], array2: ['2', '2'] },
+			{ array1: ['1', '2'], array2: [1, 2] }
+		])('$array1 and $array2', ({ array1, array2 }) => {
+			expect(isSameArray(array1, array2)).toBe(false)
+		})
+	})
+
+	describe('returned true on receiving the equivalent arrays', () => {
+		test.each([
+			{ array1: ['1'], array2: ['1'] },
+			{ array1: ['1', '2'], array2: ['1', '2'] },
+			{ array1: ['2', '1'], array2: ['2', '1'] },
+			{ array1: [1, 2], array2: [1, 2] }
+		])('$array1 and $array2', ({ array1, array2 }) => {
+			expect(isSameArray(array1, array2)).toBe(true)
+		})
+	})
+})
+
+describe('function objectKeysMatchArray', () => {
+	const keysArray = ['a', 'b', 'abc']
+	test.each([
+		{ obj: { foo: 42, bar: [4, 2] }, array: keysArray },
+		{ obj: { a: 1, b: 2 }, array: keysArray },
+		{ obj: { a: 1, b: 2, abc: 3, d: 4 }, array: keysArray },
+		{ obj: { a: 1, b: 2, abcd: 3 }, array: keysArray }
+	])('should return false for input $obj and $array', ({ obj, array }) => {
+		expect(objectKeysMatchArray(obj, array)).toBe(false)
+	})
+
+	test.each([
+		{ obj: { foo: 42, bar: [4, 2] }, array: ['foo', 'bar'] },
+		{ obj: { a: 1, b: 2 }, array: ['a', 'b'] },
+		{ obj: { foo1: 1, foo2: 2, foo3: 3 }, array: ['foo1', 'foo2', 'foo3'] },
+		{ obj: { a: 1, b: 2, abc: 3 }, array: ['a', 'b', 'abc'] },
+		{ obj: solution, array: Object.keys(solution) }
+	])('should return true for input $obj and $array', ({ obj, array }) => {
+		expect(objectKeysMatchArray(obj, array)).toBe(true)
+	})
+})
+
 describe('function isValidRequest', () => {
 	describe('received an input of the type', () => {
 
@@ -49,50 +100,31 @@ describe('function isValidRequest', () => {
 		test(`array and returned ${false}`, () => {
 			expect(isValidRequest(["123456", "456789"])).toBe(false)
 		})
-		test(`object and returned ${true}`, () => {
-			expect(isValidRequest(solution)).toBe(true)
+	})
+
+	describe('returned false on receiving the invalid object', () => {
+		test.each([
+			{ reqBody: { name: "foo" } },
+			{ reqBody: { foo: 42, bar: [4, 2] } },
+			{ reqBody: { field1: "1", field2: "2" } },
+			{ reqBody: { field1: "1", field2: "2", field3: "3", field4: "4", field5: "5" } },
+			{ reqBody: { ...solution, field7: "0" } }
+		])('$reqBody', ({ reqBody }) => {
+			expect(isValidRequest(reqBody)).toBe(false)
 		})
 	})
 
-	describe('received invalid object', () => {
-		let invalidObject
-
-		invalidObject = {name: "bob"}
-		test(`${invalidObject} returned ${false}`, () => {
-			expect(isValidRequest(invalidObject)).toBe(false)
+	describe('returned true on receiving the valid object', () => {
+		test.each([
+			{ reqBody: solution },
+			{ reqBody: { ...solution, field1: "foo" } },
+			{ reqBody: { ...solution, field1: "foo", field2: "bar" } },
+			{ reqBody: { ...solution, field1: 1, field2: 42 } },
+			{ reqBody: { ...solution, field1: { foo: "bar" } } },
+			{ reqBody: { ...solution, field1: ["foo", "bar"] } }
+		])('$reqBody', ({ reqBody }) => {
+			expect(isValidRequest(reqBody)).toBe(true)
 		})
 	})
-		// describe.each([
-		// 	{reqBody: {name: "bob"}},
-		// 	{reqBody: {field1: "bob", field2: "marley"}}
-		// ])('received $reqBody', ({reqBody}) => {
-		// 	test(`returned ${false}`, () => {
-		// 		expect(isValidRequest(reqBody)).toBe(false)
-		// 	})
-		// })
 
-		// describe('received an string of length', () => {
-		// 	test(`0 and returned '${expectedInvalidEquationReturn}'`, () => {
-		// 		expect(isValidRequest("")).toBe(expectedInvalidEquationReturn)
-		// 	})
-		// 	test(`3 and returned '${expectedInvalidEquationReturn}'`, () => {
-		// 		expect(isValidRequest("123")).toBe(expectedInvalidEquationReturn)
-		// 	})
-		// 	test(`5 and returned '${expectedInvalidEquationReturn}'`, () => {
-		// 		expect(isValidRequest("12345")).toBe(expectedInvalidEquationReturn)
-		// 	})
-		// 	test(`6 and returned '${validRequest}'`, () => {
-		// 		expect(isValidRequest("123456")).toBe(validRequest)
-		// 	})
-		// 	test(`7 and returned '${expectedInvalidEquationReturn}'`, () => {
-		// 		expect(isValidRequest("1234567")).toBe(expectedInvalidEquationReturn)
-		// 	})
-		// 	test(`8 and returned '${expectedInvalidEquationReturn}'`, () => {
-		// 		expect(isValidRequest("12345678")).toBe(expectedInvalidEquationReturn)
-		// 	})
-		// })
-
-		// describe('received an string of length 6 containing', () => {
-		// 	test()
-		// })
-	})
+})

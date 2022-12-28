@@ -6,19 +6,22 @@ function isObject(arg) {
 	return false
 }
 
-function isSameArray(a, b){
-	
+function isSameArray(array1, array2) {
+	return JSON.stringify(array1) === JSON.stringify(array2)
+}
+
+function objectKeysMatchArray(object, array) {
+	return isSameArray(Object.keys(object).sort(), array.sort())
 }
 
 function isValidRequest(reqBody) {
 	const validKeysArray = ['field1', 'field2', 'field3', 'field4', 'field5', 'field6']
-	// console.log('input:', reqBody, ', typeof input:', typeof reqBody)
+
 	if (!isObject(reqBody))
 		return false
-
-	if (JSON.stringify(Object.keys(reqBody)) != JSON.stringify(validKeysArray))
+	if (!objectKeysMatchArray(reqBody, validKeysArray))
 		return false
 	return true
 }
 
-module.exports = { isObject, isValidRequest }
+module.exports = { isObject, isSameArray, objectKeysMatchArray, isValidRequest }

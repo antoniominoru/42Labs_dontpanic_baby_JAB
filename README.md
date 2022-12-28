@@ -9,6 +9,7 @@
 - normalizar somente + e -
 - Receber somente 1 caractere por input
 - Receber somente 6 inputs
+- answer -     { field1: '8', field2: '*', field3: '9', field4: '-', field5: '3', field6: '0' }
 
 ```js
 request.body = {
@@ -39,16 +40,15 @@ response.body = {
 BACKLOG
 
 - Funções frontend
-- enviar post para Back-end
+- enviar post para Back-end - post
 - receber retorno e colocar como value dica
-- Colocar explicaçao do jogo  - fazendo
 - Melhorar o design
+- Colocar valores do input no last attemp
 
 - Funções backend
-- Validar Request - fazendo
-- validar input - Se tem só 1 caractere - fazendo
-- validar input - Se tem só 6 inputs - fazendo
-- Retornar Dar a dica
+- Criar endpoint mock para facilitar testes do front - fazendo
+- Validar Request - ok, aguardando peer-review
+- Main de valid - Fazendo
 - Requisição diferente do esperado retorna erro
 
 - Funções tests
@@ -60,6 +60,11 @@ BACKLOG
 ---------------------------------------
 FEITO
 30-12-2022 - Sexta-feira
+
+- Colocar explicaçao do jogo  - ok
+- validar input - Se tem só 1 caractere - ok
+- validar input - Se tem só 6 inputs - ok
+- Retornar Dar a dica - TXC - ok
 
 - padronizar resposta front-Back - ok
 - post do front - com 6 campos- ok
