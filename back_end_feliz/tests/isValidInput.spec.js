@@ -10,4 +10,5 @@ describe('Test function isValidInput', () => {
     it('play (3, 0, +, 1, +, 11) return False', () => {
         expect(isValidInput({ field1: '3', field2: '0', field3: '+', field4: '1', field5: '+', field6: '11' })).toBe(false);
     })
+// testar vazio
 })

@@ -5,7 +5,7 @@ describe('Test function returnGameTip', () => {
     const answerCrypt = { field1: 'C', field2: 'C', field3: 'C', field4: 'C', field5: 'C', field6: 'C' }
 
     it('play (8, *, 9, -, 3, 0) return (C, C, C, C, C, C)', () => {
-        expect(returnGameTip(answer)).toBe(JSON.stringify(answerCrypt))
+        expect(JSON.stringify(returnGameTip(answer))).toBe(JSON.stringify(answerCrypt))
     })
 })
 
@@ -14,7 +14,7 @@ describe('Test function returnGameTip', () => {
     const answerCrypt = { field1: 'T', field2: 'C', field3: 'C', field4: 'C', field5: 'C', field6: 'C' }
 
     it('play (9, *, 9, -, 3, 0) return (T, C, C, C, C, C)', () => {
-        expect(returnGameTip(answer)).toBe(JSON.stringify(answerCrypt))
+        expect(JSON.stringify(returnGameTip(answer))).toBe(JSON.stringify(answerCrypt))
     })
 })
 
@@ -23,6 +23,6 @@ describe('Test function returnGameTip', () => {
     const answerCrypt = { field1: 'X', field2: 'T', field3: 'C', field4: 'C', field5: 'C', field6: 'C' }
 
     it('play (1, 9, 9, -, 3, 0) return (X, T, C, C, C, C)', () => {
-        expect(returnGameTip(answer)).toBe(JSON.stringify(answerCrypt))
+        expect(JSON.stringify(returnGameTip(answer))).toBe(JSON.stringify(answerCrypt))
     })
 })

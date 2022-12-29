@@ -11,7 +11,7 @@ function returnGameTip(reqBody) {
             if (Object.values(reqBody)[i] == Object.values(answer)[i])
                 answerCrypt[Object.keys(reqBody)[i]] = 'C'
         }
-        return JSON.stringify(answerCrypt)
+        return (answerCrypt)
     }
     catch (error) {
         return false

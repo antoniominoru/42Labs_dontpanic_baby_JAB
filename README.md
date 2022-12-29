@@ -39,11 +39,16 @@ response.body = {
 # Lista de tarefas
 BACKLOG
 
+- Revisar código
+- integrar post
+- avaliar testes
+
 - Funções frontend
 - enviar post para Back-end - post
 - receber retorno e colocar como value dica
 - Melhorar o design
-- Colocar valores do input no last attemp
+- Colocar valores do input no last attempt
+- Implementar: ao selecionar um input já preenchido e digitar algo, substituir o valor
 
 - Funções backend
 - Criar endpoint mock para facilitar testes do front - fazendo

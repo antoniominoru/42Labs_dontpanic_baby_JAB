@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const completeGame = require('./completeGame')
 
 const app = express()
 
@@ -8,10 +9,12 @@ app.use(express.json())
 app.use(cors())
 
 app.post('/', (req, res) => {
-	if (req.body.field1 == 4)
-		res.send({ message: `POST worked` })
-	else
-		res.send({ message: `You got it wrong!!` })
+	try {
+		res.send(completeGame(req.body))
+	}
+	catch {
+		return 'Error'
+	}
 })
 
 app.post('/mock', (req, res) => {
@@ -26,8 +29,8 @@ app.post('/mock', (req, res) => {
 			field6: "C"
 		}
 	}
-
-	res.statusCode(200).send(mockBody)
+	res.status(200).send(mockBody)
+	// res.status(400).send({ message: "erro feliz" })
 })
 
 module.exports = app
