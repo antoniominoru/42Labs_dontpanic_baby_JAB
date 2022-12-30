@@ -22,7 +22,7 @@ request.body = {
 }
 
 response.body = {
-	message: "deu ruim",
+	message: "Certo",
 	clues: {
 		field1: "T",
 		field2: "X",

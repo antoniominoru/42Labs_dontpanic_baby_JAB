@@ -10,7 +10,7 @@ app.use(cors())
 
 app.post('/', (req, res) => {
 	try {
-		res.send(completeGame(req.body))
+		res.status(200).send(completeGame(req.body))
 	}
 	catch {
 		return 'Error'
@@ -19,7 +19,7 @@ app.post('/', (req, res) => {
 
 app.post('/mock', (req, res) => {
 	const mockBody = {
-		message: "POST worked",
+		message: "Certo",
 		clues: {
 			field1: "T",
 			field2: "X",

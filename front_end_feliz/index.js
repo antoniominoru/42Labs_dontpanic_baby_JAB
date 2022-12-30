@@ -1,16 +1,17 @@
 async function submitToBeEvaluated() {
 	try {
 		const inputs = getCurrentAttemptInputs()
-
-
 		const responseBody = await requestClues(inputs)
 		if (responseBody) {
-			if (responseBody.message =="POST worked") {
+			if (responseBody.message == "Certo") {
 				printLastAttempt()
-				printTips(responseBody)
+				printTips(responseBody.clues)
 			}
-			else
-				
+			else {
+				printLastAttempt()
+				// clearInputs('last')
+				clearInputs('lastCrypt')
+			}
 		}
 
 		// clearCurrentAttemptInputs()
@@ -46,15 +47,21 @@ function getCurrentAttemptInputs() {
 	return document.getElementsByClassName("current")
 }
 
-function printTips(resBody){
+function printTips(resBody) {
 	let outputs = document.getElementsByClassName("lastCrypt")
 
-	for (let i = 0; i < 6; i++) {
-		outputs[i].value = resBody.clues[`field${i + 1}`]
-	}
+	// for (let i = 0; i < 6; i++) {
+	// 	outputs[i].value = resBody.field1
+	// }
+	outputs[0].value = resBody.field1
+	outputs[1].value = resBody.field2
+	outputs[2].value = resBody.field3
+	outputs[3].value = resBody.field4
+	outputs[4].value = resBody.field5
+	outputs[5].value = resBody.field6
 }
 
-function clearInputs(inputClassName){
+function clearInputs(inputClassName) {
 	const inputs = document.getElementsByClassName(inputClassName)
 
 	for (let i = 0; i < 6; i++) {
@@ -62,7 +69,7 @@ function clearInputs(inputClassName){
 	}
 }
 
-function clearCurrentAttemptInputs(){
+function clearCurrentAttemptInputs() {
 	const inputs = getCurrentAttemptInputs()
 
 	for (let i = 0; i < 6; i++) {
@@ -71,7 +78,7 @@ function clearCurrentAttemptInputs(){
 }
 
 async function requestClues(inputs) {
-	const response = await fetch('http://localhost:3000/mock', {
+	const response = await fetch('http://localhost:3000/', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json' // IMPORTANTE!! sempre q for POST
@@ -85,6 +92,5 @@ async function requestClues(inputs) {
 			field6: inputs[5].value
 		})
 	})
-
 	return response.json()
 }
