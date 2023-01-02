@@ -8,16 +8,10 @@ app.use(express.json())
 
 app.use(cors())
 
-
-// cors(corsOptions)
-// const corsOptions = {
-// 	"origin": "*",
-// 	"methods": "GET,HEAD,PUT,PATCH,POST,DELETE"
-//   }
-
-// app.post('/', cors(corsOptions), (req, res) => {
 app.post('/', (req, res) => {
 	try {
+		// res.header("Access-Control-Allow-Origin", "*")
+		// res.header("Access-Control-Allow-Private-Network", true)
 		res.status(200).send(completeGame(req.body))
 	}
 	catch {
