@@ -1,0 +1,19 @@
+{
+  "name": "front_end_feliz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./js/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "python3 -m http.server 5012",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}

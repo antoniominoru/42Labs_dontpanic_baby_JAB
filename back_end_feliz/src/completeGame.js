@@ -5,18 +5,24 @@ const { isValidRequest } = require('./isValidRequest')
 
 function completeGame(reqBody) {
 	try {
-		const errorReturn = { field1: '', field2: '', field3: '', field4: '', field5: '', field6: '' }
+		const errorReturn = { message: 'Error', clues: { field1: '', field2: '', field3: '', field4: '', field5: '', field6: '' } }
 
 		if (!isValidRequest(reqBody))
-			return ({ message: 'Error', clues: errorReturn })
+			return errorReturn
 		if (!isValidInput(reqBody))
-			return ({ message: 'Error', clues: errorReturn })
+			return errorReturn
 		if (!isValidFunc42(reqBody))
-			return ({ message: 'Error', clues: errorReturn })
-		return ({ message: 'Certo', clues: returnGameTip(reqBody) })
+			return errorReturn
+
+		const gameTip = returnGameTip(reqBody)
+		const gameCompare = { field1: 'C', field2: 'C', field3: 'C', field4: 'C', field5: 'C', field6: 'C' }
+		if (JSON.stringify(gameTip) === JSON.stringify(gameCompare))
+			return ({ message: 'Win', clues: gameTip })
+		else
+			return ({ message: 'Tip', clues: gameTip })
 	}
 	catch (error) {
-		return 'Error'
+		return errorReturn
 	}
 }
 

@@ -8,29 +8,21 @@ app.use(express.json())
 
 app.use(cors())
 
+
+// cors(corsOptions)
+// const corsOptions = {
+// 	"origin": "*",
+// 	"methods": "GET,HEAD,PUT,PATCH,POST,DELETE"
+//   }
+
+// app.post('/', cors(corsOptions), (req, res) => {
 app.post('/', (req, res) => {
 	try {
 		res.status(200).send(completeGame(req.body))
 	}
 	catch {
-		return 'Error'
+		res.sendStatus(400)
 	}
-})
-
-app.post('/mock', (req, res) => {
-	const mockBody = {
-		message: "Certo",
-		clues: {
-			field1: "T",
-			field2: "X",
-			field3: "C",
-			field4: "T",
-			field5: "X",
-			field6: "C"
-		}
-	}
-	res.status(200).send(mockBody)
-	// res.status(400).send({ message: "erro feliz" })
 })
 
 module.exports = app

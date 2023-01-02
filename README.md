@@ -1,97 +1,32 @@
-# Dicionário - Glossário
+[Português](http://) | [English](http://)
+
+<h2 align="center"> DON'T PANIC, BABY!!</h2>
+<br>
+
+### COMO JOGAR
+<br>
+
+> _O jogo consiste em adivinhar a equação oculta que resulta em “42”. O jogado terá uma resposta se a equação recebida é a correta através de dicas._
+
+<br>
+- A equação secreta é sempre a mesma. <br>
+- Todas as equações devem resultar no número '42', caso contrário, a equação será rejeitada e não terá nenhuma dica de resposta.<br>
+- Os caracteres aceitos são números(0-9) e operadores(*, /, +, -).
+
+<br>
+As dicas são:
+
+- O "T"significa que o caractere existe na equação, mas não está na posição correta.
+- O "X"significa que o caractere não está na equação.
+- O "C" significa que o caractere existe na equação e está na posição correta.
+
+Veja um exemplo:
+
+<img src="/front_end_feliz/img/equacao.png">
+<img src="/front_end_feliz/img/dica.png">
+
+---
 
 
-# Politica
-
-- Multiplos inputs
-- Full inglês
-- Names - CamelCase
-- normalizar somente + e -
-- Receber somente 1 caractere por input
-- Receber somente 6 inputs
-- answer -     { field1: '8', field2: '*', field3: '9', field4: '-', field5: '3', field6: '0' }
-
-```js
-request.body = {
-	field1: "1",
-	field2: "2",
-	field3: "+",
-	field4: "3",
-	field5: "/",
-	field6: "5"
-}
-
-response.body = {
-	message: "Certo",
-	clues: {
-		field1: "T",
-		field2: "X",
-		field3: "C",
-		field4: "T",
-		field5: "X",
-		field6: "C"
-	}
-}
-// caso não de 42 = Mensagem: formula errada, clues: (sem envio)
-// caso dê de 42 = Mensagem: ok, clues:(envio de dica)
-// caso caracteres não válidos = Mensagem: syntaxe errada, clues:(sem envio)
-```
-# Lista de tarefas
-BACKLOG
-
-- Revisar código
-- integrar post
-- avaliar testes
-
-- Funções frontend
-- enviar post para Back-end - post
-- receber retorno e colocar como value dica
-- Melhorar o design
-- Colocar valores do input no last attempt
-- Implementar: ao selecionar um input já preenchido e digitar algo, substituir o valor
-
-- Funções backend
-- Criar endpoint mock para facilitar testes do front - fazendo
-- Validar Request - ok, aguardando peer-review
-- Main de valid - Fazendo
-- Requisição diferente do esperado retorna erro
-
-- Funções tests
-- Testes para front end
-- Teste Automatizado de integracao
-
-
-
----------------------------------------
-FEITO
-30-12-2022 - Sexta-feira
-
-- Colocar explicaçao do jogo  - ok
-- validar input - Se tem só 1 caractere - ok
-- validar input - Se tem só 6 inputs - ok
-- Retornar Dar a dica - TXC - ok
-
-- padronizar resposta front-Back - ok
-- post do front - com 6 campos- ok
-- separar em 6 inputs - HTML - Limite - cascateamento - ok
-- implementou flexbox - margin com gap - hover do botao - ok
-- validar resultado da Formula - ok
-- validar input - caracteres validos  - ok
-- padronizar envio front-Back  - ok
-
-
-23-12-2022 - Sexta-feira
-
-- aprender usar forms - campo obrigatório - passar para o proximo - ok
-- aprender testar front - dependência do React - ok
-- funcionar Post - ok
-- GET - await - ok
-- GET - Try -Catch - ok
-- GET - Async - ok
-- POST - await - ok
-- POST - Try -Catch - ok
-- POST - Async - ok
-- Teste Manual de integracao - ok
-- enviar informação de input para Back-end - ok
 
 
