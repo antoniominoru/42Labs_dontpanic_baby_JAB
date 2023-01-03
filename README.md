@@ -1,6 +1,6 @@
 [Português](https://github.com/42sp/dontpanic_baby_JAB/blob/main/README.md) | [English](https://github.com/42sp/dontpanic_baby_JAB/blob/main/README_en.md)
   
-<h2 align="center"> DON'T PANIC, BABY!!</h2>
+<h2 align="center"> DON'T PANIC, BABY!!!</h2>
 
 ### COMO JOGAR
 <br>
