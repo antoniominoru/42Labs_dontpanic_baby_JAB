@@ -1,19 +1,20 @@
-[Português](http://) | [English](http://)
+[Português](https://github.com/42sp/dontpanic_baby_JAB/blob/main/README.md) | [English](https://github.com/42sp/dontpanic_baby_JAB/blob/main/README_en.md)
 
 <h2 align="center"> DON'T PANIC, BABY!!</h2>
-<br>
 
 ### COMO JOGAR
 <br>
 
 > _O jogo consiste em adivinhar a equação oculta que resulta em “42”. O jogado terá uma resposta se a equação recebida é a correta através de dicas._
 
-<br>
+<br />
+
 - A equação secreta é sempre a mesma. <br>
 - Todas as equações devem resultar no número '42', caso contrário, a equação será rejeitada e não terá nenhuma dica de resposta.<br>
 - Os caracteres aceitos são números(0-9) e operadores(*, /, +, -).
 
-<br>
+<br />
+
 As dicas são:
 
 - O "T"significa que o caractere existe na equação, mas não está na posição correta.
@@ -22,10 +23,14 @@ As dicas são:
 
 Veja um exemplo:
 
-<img src="/front_end_feliz/img/equacao.png">
-<img src="/front_end_feliz/img/dica.png">
+<img src="front_end_feliz/img/equacao.PNG">
+<img src="front_end_feliz/img/dica1.PNG"
 
 ---
+     
+
+###   _Autores_
+
 
 
 
