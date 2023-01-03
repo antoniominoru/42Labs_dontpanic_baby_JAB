@@ -1,5 +1,5 @@
 [Português](https://github.com/42sp/dontpanic_baby_JAB/blob/main/README.md) | [English](https://github.com/42sp/dontpanic_baby_JAB/blob/main/README_en.md)
-
+  
 <h2 align="center"> DON'T PANIC, BABY!!</h2>
 
 ### COMO JOGAR
@@ -31,6 +31,8 @@ Veja um exemplo:
 
 ###   _Autores_
 
+
+ [![NPM](https://img.shields.io/npm/l/react)](https://github.com/42sp/dontpanic_baby_JAB/blob/main/LICENSE) 
 
 
 
