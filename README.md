@@ -17,8 +17,8 @@
 
 As dicas são:
 
-- O "T"significa que o caractere existe na equação, mas não está na posição correta.
-- O "X"significa que o caractere não está na equação.
+- O "T" significa que o caractere existe na equação, mas não está na posição correta.
+- O "X" significa que o caractere não está na equação.
 - O "C" significa que o caractere existe na equação e está na posição correta.
 
 Veja um exemplo:
