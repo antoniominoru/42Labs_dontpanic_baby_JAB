@@ -46,7 +46,7 @@ Let’s take a look at an example:
 
 ---
 
-### Autores
+### Authors
 
 <table >
   <tr>
