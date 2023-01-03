@@ -35,3 +35,8 @@ Let’s take a look at an example:
 <img src="front_end_feliz/img/dica1.PNG">
 
 ---
+
+###   _Autores_
+
+
+ [![NPM](https://img.shields.io/npm/l/react)](https://github.com/42sp/dontpanic_baby_JAB/blob/main/LICENSE) 
