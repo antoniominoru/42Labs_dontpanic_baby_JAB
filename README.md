@@ -29,7 +29,7 @@ Veja um exemplo:
 ---
      
 
-###   _Autores_
+###  
 
 
  [![NPM](https://img.shields.io/npm/l/react)](https://github.com/42sp/dontpanic_baby_JAB/blob/main/LICENSE) 
