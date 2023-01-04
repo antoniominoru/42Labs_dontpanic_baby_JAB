@@ -1,6 +1,12 @@
+<div align="center">
+
 [Português](https://github.com/42sp/dontpanic_baby_JAB/blob/main/README.md) | [English](https://github.com/42sp/dontpanic_baby_JAB/blob/main/README_en.md)
   
-<h2 align="center"> DON'T PANIC, BABY!!</h2>
+   [![NPM](https://img.shields.io/npm/l/react)](https://github.com/42sp/dontpanic_baby_JAB/blob/main/LICENSE) 
+ 
+</div>
+
+<h2 align="center"> DON'T PANIC, BABY!!!</h2>
 
 ### COMO JOGAR
 <br>
@@ -17,23 +23,30 @@
 
 As dicas são:
 
-- O "T"significa que o caractere existe na equação, mas não está na posição correta.
-- O "X"significa que o caractere não está na equação.
+- O "T" significa que o caractere existe na equação, mas não está na posição correta.
+- O "X" significa que o caractere não está na equação.
 - O "C" significa que o caractere existe na equação e está na posição correta.
 
 Veja um exemplo:
 
-<img src="front_end_feliz/img/equacao.PNG">
+<div align="center">
+
+<img  src="front_end_feliz/img/equacao.PNG">
 <img src="front_end_feliz/img/dica1.PNG"
+
+</div>
 
 ---
      
 
-###  
+### Autores
 
+<table >
+  <tr>
+    <td align="center"><a href="https://github.com/antoniominoru"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/47220998?v=4" width="100px;" alt=""/><br /><sub><b>Antonio Minoru</b></sub></a><br />
+    <td align="center"><a href="https://github.com/B-Mugnol"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/71146215?v=4" width="100px;" alt=""/><br /><sub><b>Bruno Mugnol</b></sub></a><br />
+    <td align="center"><a href="https://github.com/nandajfa"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/80687429?v=4" width="100px;" alt=""/><br /><sub><b>Jessica Fernanda</b></sub></a><br />
+  </tr>
 
- [![NPM](https://img.shields.io/npm/l/react)](https://github.com/42sp/dontpanic_baby_JAB/blob/main/LICENSE) 
-
-
-
+<br/>  
 
