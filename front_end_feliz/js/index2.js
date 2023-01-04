@@ -1,7 +1,4 @@
-import isValidKey from "./isValidKey.js"
-import requestTips from "./requestTips.js"
-
-export async function submitToBeEvaluated(event) {
+async function submitToBeEvaluated(event) {
 	try {
 		event.preventDefault()
 		const inputs = document.getElementsByClassName("current")
@@ -25,9 +22,8 @@ export async function submitToBeEvaluated(event) {
 		return null
 	}
 }
-window.submitToBeEvaluated = submitToBeEvaluated
 
-export function inputHandler(current, next, event) {
+function inputHandler(current, next, event) {
 	if (event.key == 'ArrowLeft' && current.previousElementSibling)
 		return current.previousElementSibling.focus()
 	if (event.key == 'ArrowRight' || event.key == 'Tab')
@@ -41,7 +37,7 @@ export function inputHandler(current, next, event) {
 		return next.focus()
 }
 
-export function moveToNext(current, event) {
+function moveToNext(current, event) {
 	event.preventDefault()
 
 	const next = current.nextElementSibling
@@ -51,7 +47,6 @@ export function moveToNext(current, event) {
 	else
 		inputHandler(current, document.getElementById("button"), event)
 }
-window.moveToNext = moveToNext
 
 function printLastAttempt() {
 	let inputs = document.getElementsByClassName("current")
@@ -97,5 +92,35 @@ function printValidationText(textType) {
 			p.innerHTML = ""
 			p.style.color = "black"
 			break;
+	}
+}
+function isValidKey(key) {
+	const validKey = /^[0-9*\/+-]$/
+	return validKey.test(key)
+}
+async function requestTips(inputs) {
+	try {
+		const response = await fetch('http://backendfeliz/', {
+			// const response = await fetch('http://localhost:3000/', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				field1: inputs[0].value,
+				field2: inputs[1].value,
+				field3: inputs[2].value,
+				field4: inputs[3].value,
+				field5: inputs[4].value,
+				field6: inputs[5].value
+			})
+		})
+		if (response.status === 200)
+			return response.json()
+		else
+			throw null
+	}
+	catch {
+		return null
 	}
 }

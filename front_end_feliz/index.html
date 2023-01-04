@@ -5,8 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="./js/index.js" defer></script>
-	<!-- <script src="moveToNext.js"></script> -->
+	<script type="module" src='./js/index.js' defer></script>
 	<title>teste_front_feliz</title>
 	<link rel="icon"
 		href="https://cdn.greatsoftwares.com.br/arquivos/paginas/7460-069a1f4f8b36e2f74a9525cd6e009e94.png">
@@ -17,10 +16,9 @@
 	<header>DON'T PANIC, BABY!</header>
 
 	<main>
-
 		<div id="title">
 			<h2>LAST ATTEMPT</h2>
-			<a title="Como jogar" target="_blank" href="https://www.google.com.br/">
+			<a title="Como jogar" target="_blank" href="https://github.com/42sp/dontpanic_baby_JAB">
 				<img class="icon" src="https://cdn-icons-png.flaticon.com/512/3668/3668345.png" alt="Game">
 			</a>
 		</div>
@@ -45,17 +43,12 @@
 			<form onsubmit="submitToBeEvaluated(event)">
 				<div class="input">
 					<input type="text" class="current" maxlength="1" autofocus required
-						onkeydown="moveToNextCurrentInput(this, 1, event)" />
-					<input type="text" class="current" maxlength="1" required
-						onkeydown="moveToNextCurrentInput(this, 2, event)" />
-					<input type="text" class="current" maxlength="1" required
-						onkeydown="moveToNextCurrentInput(this, 3, event)" />
-					<input type="text" class="current" maxlength="1" required
-						onkeydown="moveToNextCurrentInput(this, 4, event)" />
-					<input type="text" class="current" maxlength="1" required
-						onkeydown="moveToNextCurrentInput(this, 5, event)" />
-					<input type="text" class="current" maxlength="1" required
-						onkeydown="moveToNext(this, 'button', event)" />
+						onkeydown="moveToNext(this, event)" />
+					<input type="text" class="current" maxlength="1" required onkeydown="moveToNext(this, event)" />
+					<input type="text" class="current" maxlength="1" required onkeydown="moveToNext(this, event)" />
+					<input type="text" class="current" maxlength="1" required onkeydown="moveToNext(this, event)" />
+					<input type="text" class="current" maxlength="1" required onkeydown="moveToNext(this, event)" />
+					<input type="text" class="current" maxlength="1" required onkeydown="moveToNext(this, event)" />
 				</div>
 				<p id="validation_text"></p>
 				<button id="button" type="submit">Submit</button>
