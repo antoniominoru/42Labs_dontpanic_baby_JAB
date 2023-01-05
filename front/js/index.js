@@ -1,7 +1,7 @@
 import isValidKey from "./isValidKey.js"
 import requestTips from "./requestTips.js"
 
-export async function submitToBeEvaluated(event) {
+async function submitToBeEvaluated(event) {
 	try {
 		event.preventDefault()
 		const inputs = document.getElementsByClassName("current")
@@ -27,7 +27,7 @@ export async function submitToBeEvaluated(event) {
 }
 window.submitToBeEvaluated = submitToBeEvaluated
 
-export function inputHandler(current, next, event) {
+function inputHandler(current, next, event) {
 	if (event.key == 'ArrowLeft' && current.previousElementSibling)
 		return current.previousElementSibling.focus()
 	if (event.key == 'ArrowRight' || event.key == 'Tab')
@@ -41,7 +41,7 @@ export function inputHandler(current, next, event) {
 		return next.focus()
 }
 
-export function moveToNext(current, event) {
+function moveToNext(current, event) {
 	event.preventDefault()
 
 	const next = current.nextElementSibling

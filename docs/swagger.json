@@ -2,16 +2,13 @@
 	"openapi": "3.0.0",
 	"info": {
 		"title": "Game API",
-		"description": "Guessing the hidden equation that results in “42",
+		"description": "Guessing the hidden equation that results in '42'",
 		"version": "1.0.0"
 	},
 	"paths": {
-		"/" : {
+		"/": {
 			"post": {
-				"tags": [
-					"/"
-				],
-				"sumary": "Send Request",
+				"summary": "Send Request",
 				"description": "Send inputs to check.",
 				"requestBody": {
 					"required": true,
@@ -95,9 +92,7 @@
 						}
 					}
 				}
-
 			}
 		}
-
 	}
 }

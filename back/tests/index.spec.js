@@ -1,4 +1,4 @@
-const request = require("supertest") // Mesmo papel do server para test - listen
+const request = require("supertest")
 const app = require('../src/routes')
 
 describe('Test My app server', () => {

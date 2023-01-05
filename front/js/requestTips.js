@@ -1,10 +1,9 @@
 export default async function requestTips(inputs) {
 	try {
-		const response = await fetch('http://backendfeliz/', {
-		// const response = await fetch('http://localhost:3000/', {
+		const response = await fetch('http://localhost:3000/', {
 			method: 'POST',
 			headers: {
-				'Content-Type': 'application/json',
+				"Content-type": "application/json; charset=UTF-8",
 			},
 			body: JSON.stringify({
 				field1: inputs[0].value,
